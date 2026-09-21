@@ -12,9 +12,9 @@ export const siteConfig = {
   domain: "https://davidomotara.dev", // Replace with your real domain once deployed
 
   links: {
-    github: "GITHUB_URL_HERE",
-    linkedin: "LINKEDIN_URL_HERE",
-    email: "EMAIL_ADDRESS_HERE",
+    github: "https://github.com/t-dave",
+    linkedin: "www.linkedin.com/in/david-omotara-8b9095191",
+    email: "tomyomo@gmail.com",
     resume: "/resume.pdf", // Place your resume PDF in /public/resume.pdf
   },
 } as const;
