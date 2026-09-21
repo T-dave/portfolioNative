@@ -1,0 +1,94 @@
+import { Project } from "@/types";
+
+export const projects: Project[] = [
+  {
+    slug: "game-deals-tracker",
+    name: "Game Deals Tracker",
+    tagline: "Mobile app aggregating game deals across online stores.",
+    description:
+      "A mobile application that aggregates game deals and pricing information from online stores, letting users search titles, compare prices, and check store details in one place.",
+    role: "Sole mobile developer — design, implementation, and API integration.",
+    problem:
+      "Game prices are scattered across many storefronts, making it slow to figure out where a title is actually cheapest or worth buying right now.",
+    solution:
+      "A React Native app that pulls live deal data from a games-pricing API, normalizes it, and presents it as a searchable, browsable catalog with per-game store breakdowns.",
+    technicalApproach:
+      "Built with Expo and TypeScript. Redux Toolkit manages global state for search results, filters, and cached game details, keeping API calls efficient. Data fetching is handled through a typed API layer, with loading and error states handled per-screen rather than globally.",
+    challenges:
+      "The pricing API returns inconsistent image sizes and occasionally missing fields, so the UI needed to stay stable and legible even with incomplete data. Optimizing image loading for long, scrollable lists without jank took several passes.",
+    learnings:
+      "Sharpened my approach to normalizing third-party API data before it reaches the UI layer, and got much more deliberate about when global state (Redux) is worth the overhead versus local component state.",
+    features: [
+      "Search across games and deals",
+      "Game detail pages with store-by-store pricing",
+      "Store information and links",
+      "Dynamic data from a live pricing API",
+      "Centralized state management with Redux Toolkit",
+      "Optimized image loading for smooth scrolling",
+      "Responsive layouts across device sizes",
+    ],
+    techStack: ["React Native", "Expo", "TypeScript", "Redux Toolkit", "REST APIs"],
+    githubUrl: "GITHUB_URL_HERE",
+    liveUrl: undefined,
+    image: "/projects/game-deals-tracker.svg",
+  },
+  {
+    slug: "webtraffic-marketplace",
+    name: "WebTraffic Marketplace",
+    tagline: "Full-stack marketplace with listings, stores, and messaging.",
+    description:
+      "A marketplace platform where users can create stores, list items, message other users, and manage listings and favorites — built end-to-end, from the database up through the client.",
+    role: "Full-stack developer — API design, database modeling, and client implementation.",
+    problem:
+      "Independent sellers needed a lightweight place to list items, run a store, and talk to buyers directly, without the overhead of a full e-commerce platform.",
+    solution:
+      "A Node.js and Express backend exposing REST APIs for authentication, listings, stores, and messaging, backed by MongoDB, paired with a React-based client that consumes those APIs.",
+    technicalApproach:
+      "Authentication uses JWT with protected routes on the API. Images are uploaded to Cloudinary rather than stored on the server. The data model separates users, stores, and listings so a user can own multiple stores, each with its own listings and favorites. Messaging is modeled as threads between two users tied to a listing.",
+    challenges:
+      "Getting authentication state to stay in sync between the client and API — including token refresh and protected-route handling — took careful design. Structuring the listings/stores/favorites relationships in MongoDB so queries stayed fast also required a few iterations on the schema.",
+    learnings:
+      "Learned a lot about structuring a REST API around real-world relationships (users → stores → listings) rather than a flat resource model, and about handling file uploads and image hosting outside the app server.",
+    features: [
+      "User authentication with JWT",
+      "Marketplace listings with search",
+      "Store creation and management",
+      "Favorites",
+      "Direct messaging between users",
+      "Profile management",
+      "Image uploads via Cloudinary",
+      "REST API backend",
+    ],
+    techStack: ["React", "Node.js", "Express", "MongoDB", "JWT", "Cloudinary"],
+    githubUrl: "GITHUB_URL_HERE",
+    liveUrl: undefined,
+    image: "/projects/webtraffic-marketplace.svg",
+  },
+  {
+    slug: "247-web-solutions",
+    name: "247 Web Solutions",
+    tagline: "Business application built for a real operating company.",
+    description:
+      "A business-facing application built to support day-to-day operations for a small company, focused on practical, reliable functionality over anything flashy.",
+    role: "Developer — implementation and ongoing maintenance.",
+    problem:
+      "The business needed a straightforward digital tool to support its operations, without existing software fitting the specific workflow.",
+    solution:
+      "A focused application built around the business's actual process, prioritizing reliability and ease of use over feature breadth.",
+    technicalApproach:
+      "Built using the same core stack as my other work — a JavaScript/TypeScript client backed by a Node.js API — keeping the architecture simple and maintainable for a small, real-world user base.",
+    challenges:
+      "Working directly with a non-technical stakeholder meant translating vague operational needs into concrete features, and adjusting scope as requirements became clearer during the build.",
+    learnings:
+      "Reinforced how much requirements shift once real users start using software, and the value of shipping a simple, working version early rather than over-building upfront.",
+    features: [
+      "Core workflow support tailored to the business",
+      "Simple, maintainable architecture",
+      "Built and iterated on with direct stakeholder feedback",
+    ],
+    techStack: ["React Native", "Node.js", "Express.js", "MongoDB"],
+    githubUrl: "GITHUB_URL_HERE",
+    liveUrl: undefined,
+    image: "/projects/247-web-solutions.svg",
+  },
+];
