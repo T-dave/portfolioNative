@@ -9,7 +9,7 @@ export const siteConfig = {
   location: "Lagos, Nigeria",
   shortBio:
     "React Native developer with 2+ years of experience building cross-platform applications and backend services with JavaScript, TypeScript, and Node.js.",
-  domain: "https://davidomotara.dev", // Replace with your real domain once deployed
+  domain: "https://teedaveportfolio.netlify.app", // Replace with your real domain once deployed
 
   links: {
     github: "https://github.com/t-dave",
