@@ -19,17 +19,18 @@ export function Hero() {
       id="hero"
       className="relative flex min-h-screen items-center overflow-hidden pt-[72px]"
     >
-      <div className="section-shell grid w-full grid-cols-1 items-center gap-14 py-16 lg:grid-cols-[1.1fr_0.9fr] lg:gap-10 lg:py-0">
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-[480px] bg-[radial-gradient(circle_at_top,_rgba(227,168,87,0.18),transparent_42%)]" />
+      <div className="section-shell relative grid w-full grid-cols-1 items-center gap-14 py-16 lg:grid-cols-[1.1fr_0.9fr] lg:gap-10 lg:py-0">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <p className="font-mono text-xs tracking-wide text-accent">
+          <p className="font-mono text-xs tracking-[0.2em] text-accent">
             SOFTWARE ENGINEER — MOBILE — FULL STACK
           </p>
 
-          <h1 className="mt-5 max-w-xl text-4xl font-semibold leading-[1.15] tracking-tight text-ink sm:text-5xl lg:text-[3.25rem]">
+          <h1 className="mt-5 max-w-xl text-4xl font-semibold leading-[1.08] tracking-[-0.04em] text-ink sm:text-5xl lg:text-[3.6rem]">
             Software engineer building mobile &amp; full-stack products.
           </h1>
 
@@ -45,6 +46,17 @@ export function Hero() {
             {siteConfig.location} • Available for remote opportunities
           </div>
 
+          <div className="mt-8 flex flex-wrap gap-2">
+            {['React Native', 'Node.js', 'TypeScript', 'Product thinking'].map((tag) => (
+              <span
+                key={tag}
+                className="rounded-full border border-hairline bg-surface/60 px-2.5 py-1 text-[11px] font-medium uppercase tracking-[0.14em] text-muted"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+
           <div className="mt-9 flex flex-wrap items-center gap-4">
             <a
               href="#projects"
@@ -54,14 +66,14 @@ export function Hero() {
                   .getElementById("projects")
                   ?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="inline-flex items-center justify-center rounded-md bg-ink px-5 py-2.5 text-sm font-medium text-bg transition-colors hover:bg-accent-bright"
+              className="inline-flex items-center justify-center rounded-md bg-ink px-5 py-2.5 text-sm font-medium text-bg transition-all duration-200 hover:-translate-y-0.5 hover:bg-accent-bright"
             >
               View my work
             </a>
             <a
               href={siteConfig.links.resume}
               download
-              className="inline-flex items-center justify-center gap-2 rounded-md border border-hairline-strong px-5 py-2.5 text-sm font-medium text-ink transition-colors hover:border-accent/60 hover:text-accent-bright"
+              className="inline-flex items-center justify-center gap-2 rounded-md border border-hairline-strong bg-surface/50 px-5 py-2.5 text-sm font-medium text-ink transition-all duration-200 hover:-translate-y-0.5 hover:border-accent/60 hover:text-accent-bright"
             >
               <Download size={14} strokeWidth={1.75} />
               Download resume
@@ -86,7 +98,7 @@ export function Hero() {
               target="_blank"
               rel="noreferrer"
               aria-label="GitHub profile"
-              className="text-muted transition-colors hover:text-ink"
+              className="rounded-full border border-hairline p-2 text-muted transition-all duration-200 hover:border-accent/40 hover:text-accent-bright"
             >
               <Github size={19} strokeWidth={1.75} />
             </a>
@@ -95,7 +107,7 @@ export function Hero() {
               target="_blank"
               rel="noreferrer"
               aria-label="LinkedIn profile"
-              className="text-muted transition-colors hover:text-ink"
+              className="rounded-full border border-hairline p-2 text-muted transition-all duration-200 hover:border-accent/40 hover:text-accent-bright"
             >
               <Linkedin size={19} strokeWidth={1.75} />
             </a>
@@ -108,8 +120,9 @@ export function Hero() {
           transition={{ duration: 0.7, ease: "easeOut", delay: 0.15 }}
           className="relative"
         >
-          <div className="overflow-hidden rounded-card border border-hairline bg-surface shadow-panel">
-            <div className="flex items-center gap-1.5 border-b border-hairline px-4 py-3">
+          <div className="relative overflow-hidden rounded-card border border-accent/15 bg-surface/90 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.9)]">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(227,168,87,0.18),transparent_45%)]" />
+            <div className="relative flex items-center gap-1.5 border-b border-hairline px-4 py-3">
               <span className="h-2.5 w-2.5 rounded-full bg-[#3a3c42]" />
               <span className="h-2.5 w-2.5 rounded-full bg-[#3a3c42]" />
               <span className="h-2.5 w-2.5 rounded-full bg-[#3a3c42]" />
@@ -117,7 +130,7 @@ export function Hero() {
                 stack.ts
               </span>
             </div>
-            <pre className="overflow-x-auto px-5 py-6 font-mono text-[13px] leading-7 text-muted sm:text-sm">
+            <pre className="relative overflow-x-auto px-5 py-6 font-mono text-[13px] leading-7 text-muted sm:text-sm">
               <code>
                 {codeLines.map((line, i) => (
                   <motion.div

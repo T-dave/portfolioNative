@@ -59,9 +59,9 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        "fixed inset-x-0 top-0 z-50 transition-colors duration-300",
+        "fixed inset-x-0 top-0 z-50 transition-all duration-300",
         scrolled
-          ? "border-b border-hairline bg-bg/85 backdrop-blur-md"
+          ? "border-b border-hairline bg-bg/80 shadow-[0_12px_32px_-20px_rgba(0,0,0,0.9)] backdrop-blur-md"
           : "border-b border-transparent bg-transparent"
       )}
     >
@@ -84,10 +84,10 @@ export function Navbar() {
                 href={`#${link.href}`}
                 onClick={(e) => handleNavClick(e, link.href)}
                 className={cn(
-                  "relative py-1 text-sm transition-colors duration-200",
+                  "relative py-1 text-sm transition-colors duration-200 hover:text-ink",
                   activeSection === link.href
                     ? "text-ink"
-                    : "text-muted hover:text-ink"
+                    : "text-muted"
                 )}
               >
                 {link.label}
@@ -108,7 +108,7 @@ export function Navbar() {
             target="_blank"
             rel="noreferrer"
             aria-label="GitHub profile"
-            className="text-muted transition-colors hover:text-ink"
+            className="rounded-full border border-hairline p-2 text-muted transition-all duration-200 hover:border-accent/40 hover:text-accent-bright"
           >
             <Github size={18} strokeWidth={1.75} />
           </a>
@@ -117,14 +117,14 @@ export function Navbar() {
             target="_blank"
             rel="noreferrer"
             aria-label="LinkedIn profile"
-            className="text-muted transition-colors hover:text-ink"
+            className="rounded-full border border-hairline p-2 text-muted transition-all duration-200 hover:border-accent/40 hover:text-accent-bright"
           >
             <Linkedin size={18} strokeWidth={1.75} />
           </a>
           <a
             href={siteConfig.links.resume}
             download
-            className="inline-flex items-center gap-1.5 rounded-md border border-hairline-strong px-3.5 py-1.5 text-sm text-ink transition-colors hover:border-accent/60 hover:text-accent-bright"
+            className="inline-flex items-center gap-1.5 rounded-md border border-hairline-strong bg-surface/60 px-3.5 py-1.5 text-sm text-ink transition-all duration-200 hover:-translate-y-0.5 hover:border-accent/60 hover:bg-accent/5 hover:text-accent-bright"
           >
             <FileText size={14} strokeWidth={1.75} />
             Resume

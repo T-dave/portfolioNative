@@ -8,7 +8,7 @@ export const siteConfig = {
   title: "Software Engineer | Mobile & Full-Stack Developer",
   location: "Lagos, Nigeria",
   shortBio:
-    "React Native developer with 2+ years of experience building cross-platform applications and backend services with JavaScript, TypeScript, and Node.js.",
+    "React Native developer with 4+ years of experience building cross-platform applications and backend services with JavaScript, TypeScript, and Node.js.",
   domain: "https://teedaveportfolio.netlify.app", // Replace with your real domain once deployed
 
   links: {

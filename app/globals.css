@@ -14,12 +14,26 @@
 
   body {
     @apply bg-bg text-ink antialiased;
-    background-image: radial-gradient(
-      circle at 50% 0%,
-      rgba(227, 168, 87, 0.06),
-      transparent 45%
-    );
+    position: relative;
+    background-image:
+      radial-gradient(circle at top, rgba(227, 168, 87, 0.12), transparent 28%),
+      radial-gradient(circle at 80% 12%, rgba(112, 114, 255, 0.09), transparent 25%),
+      linear-gradient(180deg, #08090b 0%, #08090b 100%);
     background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 24px 24px;
+    mask-image: radial-gradient(circle at center, black, transparent 78%);
+    opacity: 0.45;
   }
 
   ::selection {
@@ -50,8 +64,12 @@
     @apply mx-auto w-full max-w-content px-6 sm:px-8 lg:px-10;
   }
 
+  .section-card {
+    @apply rounded-card border border-hairline bg-surface/80 shadow-panel backdrop-blur-sm;
+  }
+
   .section-label {
-    @apply font-mono text-xs tracking-wide text-muted;
+    @apply font-mono text-xs tracking-[0.18em] text-muted;
   }
 
   .hairline-border {
