@@ -91,4 +91,33 @@ export const projects: Project[] = [
     liveUrl: undefined,
     image: "/projects/247Web.png",
   },
+  {
+    slug: "247-logistics",
+    name: "247 Logistics",
+    tagline: "Pickup requests, dispatch flow, and shipment tracking in one place.",
+    description:
+      "A logistics operations dashboard designed to help a delivery business manage requests, assign jobs, and track active shipments from dispatch to completion.",
+    role: "Full-stack developer — product workflow design, API development, and dashboard implementation.",
+    problem:
+      "The business was handling shipments across several disconnected touchpoints, which made it hard to keep track of pickups, delivery status, and assignment updates in one place.",
+    solution:
+      "A centralized operations platform that allows customers to request pickups and allows dispatch teams to assign and monitor deliveries through a simple workflow.",
+    technicalApproach:
+      "I built the platform with a React front end and a Node.js/Express API, with MongoDB storing job records, shipment details, and operational status. The data model keeps dispatch information organized without making the interface complicated for day-to-day users.",
+    challenges:
+      "The main challenge was translating a real-world logistics flow into a clean interface without losing important operational details like status changes, pickup timing, and delivery updates.",
+    learnings:
+      "This project sharpened my understanding of how operational software needs to reflect the real rhythm of a business, especially when teams are working under time pressure.",
+    features: [
+      "Pickup and delivery request management",
+      "Dispatch dashboard for assignment tracking",
+      "Shipment status monitoring",
+      "Order and customer record management",
+      "Operational workflow for delivery teams",
+    ],
+    techStack: ["React", "Node.js", "Express.js", "MongoDB"],
+    githubUrl: "https://github.com/247websolutionsltd/247Logistics.git",
+    liveUrl: undefined,
+    image: "/projects/247-logistics.png",
+  },
 ];
