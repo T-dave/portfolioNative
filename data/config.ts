@@ -15,7 +15,7 @@ export const siteConfig = {
     github: "https://github.com/t-dave",
     linkedin: "https://www.linkedin.com/in/david-omotara-8b9095191/",
     email: "tomyomo@gmail.com",
-    resume: "/resume.pdf", // Place your resume PDF in /public/resume.pdf
+    resume: "/resume.pdf",
   },
 } as const;
 
